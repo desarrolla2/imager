@@ -19,46 +19,43 @@
         <link rel="shortcut icon" href="/ico/favicon.ico" />
     </head>
     <body>
-        <div class="navbar navbar-fixed-top">
+        <header class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="#">Project name</a>
-                    <div class="nav-collapse">
-                        <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
+                    <div  id="brand">
+                        <h1><a class="" href="#">Imager</a><h1>
+                        <p>"Search images across internet"</p>
+                    </div>
+                    <div id="search">
+                        <form class="form-search">
+                            <input type="text" class="input-medium search-query span3">
+                            <button type="submit" class="btn">Search</button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
         <div class="container">
             {% block body %}{% endblock %}
-            <hr />
-            <footer>
-                <p>&copy; Company 2012</p>
-            </footer>
-        </div>
+                <hr />
+                <footer>
+                    <p>&copy; Company 2012</p>
+                </footer>
+            </div>
         {% block javascripts %}
-        <script src="/js/jquery.js"></script>
-        <script src="/js/bootstrap-transition.js"></script>
-        <script src="/js/bootstrap-alert.js"></script>
-        <script src="/js/bootstrap-modal.js"></script>
-        <script src="/js/bootstrap-dropdown.js"></script>
-        <script src="/js/bootstrap-scrollspy.js"></script>
-        <script src="/js/bootstrap-tab.js"></script>
-        <script src="/js/bootstrap-tooltip.js"></script>
-        <script src="/js/bootstrap-popover.js"></script>
-        <script src="/js/bootstrap-button.js"></script>
-        <script src="/js/bootstrap-collapse.js"></script>
-        <script src="/js/bootstrap-carousel.js"></script>
-        <script src="/js/bootstrap-typeahead.js"></script>
+            <script src="/js/jquery.js"></script>
+            <script src="/js/bootstrap-transition.js"></script>
+            <script src="/js/bootstrap-alert.js"></script>
+            <script src="/js/bootstrap-modal.js"></script>
+            <script src="/js/bootstrap-dropdown.js"></script>
+            <script src="/js/bootstrap-scrollspy.js"></script>
+            <script src="/js/bootstrap-tab.js"></script>
+            <script src="/js/bootstrap-tooltip.js"></script>
+            <script src="/js/bootstrap-popover.js"></script>
+            <script src="/js/bootstrap-button.js"></script>
+            <script src="/js/bootstrap-collapse.js"></script>
+            <script src="/js/bootstrap-carousel.js"></script>
+            <script src="/js/bootstrap-typeahead.js"></script>
     {% endblock %}
-    </body>
-</html>
+        </body>
+    </html>

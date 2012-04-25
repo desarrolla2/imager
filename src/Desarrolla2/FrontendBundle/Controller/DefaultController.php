@@ -5,15 +5,19 @@ namespace Desarrolla2\FrontendBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Desarrolla2\FrontendBundle\Form\Type\SearchType;
 
 class DefaultController extends Controller
 {
+
     /**
-     * @Route("/hello/{name}")
+     * @Route("/")
      * @Template()
      */
-    public function indexAction($name)
+    public function indexAction()
     {
-        return array('name' => $name);
+        $form = $this->createForm(new SearchType());
+        return array('form' => $form->createView());
     }
+
 }
