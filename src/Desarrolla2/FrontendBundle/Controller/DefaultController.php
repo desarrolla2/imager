@@ -16,8 +16,13 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $form = $this->createForm(new SearchType());
-        return array('form' => $form->createView());
+        $client = $this->get('flickr_client');
+        $client->search();
+        
+                $collection = $this->get('image_collection');
+        $collection->sort();
+        //$form = $this->createForm(new SearchType());
+        return array('images' => $collection->toArray());
     }
 
 }

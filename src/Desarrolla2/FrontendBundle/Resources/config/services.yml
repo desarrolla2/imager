@@ -1,0 +1,6 @@
+services:
+    flickr_client:
+        class: Desarrolla2\FrontendBundle\Service\FlickrClientService
+        arguments: ['@image_collection']
+    image_collection:
+        class: Desarrolla2\FrontendBundle\Collections\ImageCollection
