@@ -27,28 +27,55 @@
                         <p>"Search images across internet"</p>
                     </div>
                     <div id="search">
-                        <form class="form-search">
-                            <input type="text" class="input-medium search-query span3" placeholder="search ..">
-                            <button type="submit" class="btn">Search</button>
-                        </form>
+                        {% render "FrontendBundle:Widgets:search"%}                        
                     </div>
                 </div>
             </div>
         </header>
         <div class="container">
-                <div class="alert alert-block">
-                    <a class="close" data-dismiss="alert" href="#">×</a>
+            <div class="alert alert-block">
+                <a class="close" data-dismiss="alert" href="#">×</a>
                 <h4 class="alert-heading">Warning!</h4>This is a beta version.
-                </div>
-            {% block body %}{% endblock %}
-                <hr />
-                <footer>
-                    <p>&copy; Imager 2012. developed by desarrolla2</p>
-                </footer>
             </div>
-        {% block javascripts %}
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-            <script src="/js/bootstrap.js"></script>
-    {% endblock %}
-        </body>
-    </html>
+            {% block body %}{% endblock %}            
+        </div>
+            <footer class="navbar" style="background: #2C2C2C">
+            <div class="container" style="width: 1170px; text-align: center;">
+                <div class="row" >
+                    <div class="span4">
+                        <h3>Lo más buscado</h3>
+                        <ul>
+                            <li>item 1</li>
+                            <li>item 2</li>
+                            <li>item 3</li>
+                            <li>item 4</li>
+                        </ul>
+                    </div>
+                    <div class="span4">
+                        <h3>Lo más valorado</h3>
+                        <ul>
+                            <li>item 1</li>
+                            <li>item 2</li>
+                            <li>item 3</li>
+                            <li>item 4</li>
+                        </ul>                        
+                    </div>
+                    <div class="span4">
+                        <h3>Lo último</h3>
+                        <ul>
+                            <li>item 1</li>
+                            <li>item 2</li>
+                            <li>item 3</li>
+                            <li>item 4</li>
+                        </ul>                        
+                    </div>
+                </div>
+                <p >&copy; Imager 2012. developed by desarrolla2</p>
+            </div>
+        </footer>            
+    {% block javascripts %}
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="/js/bootstrap.js"></script>
+{% endblock %}
+    </body>
+</html>

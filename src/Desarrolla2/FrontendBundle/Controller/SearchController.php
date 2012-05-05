@@ -7,17 +7,21 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Desarrolla2\FrontendBundle\Form\Type\SearchType;
 
-class DefaultController extends Controller
+class SearchController extends Controller
 {
 
     /**
-     * @Route("/")
+     * @Route("/s")
      * @Template()
      */
     public function indexAction()
     {
+        $client = $this->get('flickr_client');
+        $client->search();
 
-        $form = $this->createForm(new SearchType());
+        $collection = $this->get('image_collection');
+        $collection->sort();
+        return array('images' => $collection->toArray());
     }
 
 }

@@ -7,18 +7,16 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Desarrolla2\FrontendBundle\Form\Type\SearchType;
 
-class DefaultController extends Controller
+class WidgetsController extends Controller
 {
 
     /**
-     * @Route("/")
-     * @Template()
+     * @Template("FrontendBundle:Widgets:search.html.twig")
      */
-    public function indexAction()
+    public function searchAction()
     {
-
         $form = $this->createForm(new SearchType());
+        return array('form' => $form->createView());
     }
 
 }
-

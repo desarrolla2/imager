@@ -1,0 +1,5 @@
+<form class="form-search" action="" method="get" {{ form_enctype(form) }}>   
+    {{ form_widget(form.text) }}
+    <button type="submit" class="btn">Search</button>
+    {{ form_rest(form) }}
+</form>

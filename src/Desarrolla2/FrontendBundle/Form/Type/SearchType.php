@@ -12,6 +12,10 @@ class SearchType extends AbstractType
     {
         $builder->add('text', new \Symfony\Component\Form\Extension\Core\Type\TextType(), array(
             'required' => true,
+            'attr'     => array(
+                'placeholder' => 'search ...',
+                'class'       => 'input-medium search-query span3',
+            ),
         ));
     }
 
