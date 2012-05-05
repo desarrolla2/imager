@@ -1,14 +1,15 @@
 1.- Formulario de búsqueda.
         URL
         Cache
-        Varnish
 2.- Home.
+2.- Varnish HTTP cache hits
 3.- Otros servicios de búsqueda de imagenes.
     1.- Google
     2.- Yahoo
 3.- Vista de imagen.
     1.- Gestión de Assets.
     1.- Cache de imagenes.
+3.- Mejora de la búsqueda.
 3.- Pie de página
 4.- Deploy.
 5.- Backend.

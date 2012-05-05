@@ -4,13 +4,15 @@ namespace Desarrolla2\FrontendBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Validator\Constraints\MinLength;
+use Symfony\Component\Validator\Constraints\Collection;
 
 class SearchType extends AbstractType
 {
 
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('text', new \Symfony\Component\Form\Extension\Core\Type\TextType(), array(
+        $builder->add('q', new \Symfony\Component\Form\Extension\Core\Type\TextType(), array(
             'required' => true,
             'attr'     => array(
                 'placeholder' => 'search ...',
@@ -21,12 +23,19 @@ class SearchType extends AbstractType
 
     public function getName()
     {
-        return 'search_type';
+        return 's';
     }
 
     public function getDefaultOptions(array $options)
     {
-        return array();
+
+        $collectionConstraint = new Collection(array(
+                    'q' => new MinLength(3),
+                ));
+        return array(
+            'validation_constraint' => $collectionConstraint,
+            'csrf_protection'       => false,
+        );
     }
 
 }

@@ -22,13 +22,12 @@
         <header class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
+                    {% block header %}                                         
                     <div  id="brand">
                         <h1><a class="" href="#">Imager</a><h1>
                         <p>"Search images across internet"</p>
                     </div>
-                    <div id="search">
-                        {% render "FrontendBundle:Widgets:search"%}                        
-                    </div>
+                    {% endblock %}                     
                 </div>
             </div>
         </header>
@@ -40,36 +39,7 @@
             {% block body %}{% endblock %}            
         </div>
             <footer class="navbar" style="background: #2C2C2C">
-            <div class="container" style="width: 1170px; text-align: center;">
-                <div class="row" >
-                    <div class="span4">
-                        <h3>Lo más buscado</h3>
-                        <ul>
-                            <li>item 1</li>
-                            <li>item 2</li>
-                            <li>item 3</li>
-                            <li>item 4</li>
-                        </ul>
-                    </div>
-                    <div class="span4">
-                        <h3>Lo más valorado</h3>
-                        <ul>
-                            <li>item 1</li>
-                            <li>item 2</li>
-                            <li>item 3</li>
-                            <li>item 4</li>
-                        </ul>                        
-                    </div>
-                    <div class="span4">
-                        <h3>Lo último</h3>
-                        <ul>
-                            <li>item 1</li>
-                            <li>item 2</li>
-                            <li>item 3</li>
-                            <li>item 4</li>
-                        </ul>                        
-                    </div>
-                </div>
+            <div class="container" style="width: 1170px; text-align: center;">                
                 <p >&copy; Imager 2012. developed by desarrolla2</p>
             </div>
         </footer>            

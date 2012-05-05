@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+
+{% block header %}
+    {{ parent() }}
+    <div id="search">
+        {% render "FrontendBundle:Widgets:search"%}                        
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <div class="row" >
+        <div class="span4">
+            <h3>Lo más buscado</h3>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+                <li>item 4</li>
+            </ul>
+        </div>
+        <div class="span4">
+            <h3>Lo más valorado</h3>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+                <li>item 4</li>
+            </ul>                        
+        </div>
+        <div class="span4">
+            <h3>Lo último</h3>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+                <li>item 4</li>
+            </ul>                        
+        </div>
+    </div>
+    {{ parent() }}
+{% endblock %}

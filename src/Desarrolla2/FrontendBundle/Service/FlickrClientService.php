@@ -25,8 +25,7 @@ class FlickrClientService
 
     public function search($query = null)
     {
-        if ($query ||  1) {
-            $query = "symfony live";
+        if ($query) {
             $search = 'http://flickr.com/services/rest/?method=flickr.photos.search&api_key=' . $this->apiKey . '&text=' . urlencode($query) . '&per_page=68&format=php_serial';
         }
         else {
