@@ -1,21 +1,19 @@
-1.- Formulario de búsqueda.
-        URL
-        Cache
-2.- Home.
-2.- Varnish HTTP cache hits
-3.- Otros servicios de búsqueda de imagenes.
-    1.- Google
-    2.- Yahoo
 3.- Vista de imagen.
     1.- Gestión de Assets.
     1.- Cache de imagenes.
 3.- Mejora de la búsqueda.
+    1.- paginador
 3.- Pie de página
+3.- Error 400 / 500
+3.- Warning control in jquery
 4.- Deploy.
+3.- Otros servicios de búsqueda de imagenes.
+    1.- Google
+    2.- Yahoo
 5.- Backend.
     1.- Sonata
-6.- Comunicacion.
     1.- User Voice
-6.- Revisión del sistema de servicios.
+4.- Comunicacion.
 7.- Publicar en GitHub.
     1.- Comentarios de todas las clases.
+

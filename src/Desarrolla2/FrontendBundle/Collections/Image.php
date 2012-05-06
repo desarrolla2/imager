@@ -39,7 +39,7 @@ class Image
         if (isset($options['name'])) {
             $this->setName($options['name']);
         }
-                if (isset($options['title'])) {
+        if (isset($options['title'])) {
             $this->setName($options['title']);
         }
     }
@@ -87,6 +87,11 @@ class Image
         if ($url) {
             $this->url = (string) $url;
         }
+    }
+
+    public function getBase64Url()
+    {
+        return base64_encode($this->url);
     }
 
     public function getProvider()

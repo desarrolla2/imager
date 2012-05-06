@@ -12,7 +12,7 @@ class SearchController extends Controller
 {
 
     /**
-     * @Route("/s")
+     * @Route("/s", name="search")
      */
     public function indexAction(Request $request)
     {

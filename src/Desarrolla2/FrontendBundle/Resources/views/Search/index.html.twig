@@ -5,7 +5,9 @@
 {% if loop.index <= 8 %}
 {% if loop.index % 4 == 1%} <div class="row"> {% endif %}
     <div class="span3">        
-        <p><img src="{{ image.url }}" alt="{{ image.name }}" width="270"/></p>
+        <p>
+            <a href="{{ path('view', {'image':image.base64url} ) }}"><img src="{{ image.url }}" alt="{{ image.name }}" width="270"/></a>
+        </p>
         <p>{{ loop.index }}.- {{ image.name }},  Rating {{ image.rating }} Licence: CC author:daniel.gonzalez provider {{ image.provider }}</p>
     </div>
 {% if loop.index % 4 == 0%} </div> {% endif %}

@@ -1,0 +1,14 @@
+/* 
+    Document   : main
+    Created on : May 6, 2012, 4:08:24 PM
+    Author     : Daniel González <daniel.gonzalez@freelancemadrid.es>
+*/
+
+body { padding-top: 110px; padding-bottom: 40px; } 
+#brand{ float: left; margin-top: 10px;}
+#brand a, #brand p{ display: block; }
+#search{float: right; margin-top: 30px;}
+#home-search{height: 600px; display: block; text-align: center;}
+#home-search form {display:block; margin: 50px}
+#home-search form input {height: 32px;}
+#home-search h1{color: #0088CC}
