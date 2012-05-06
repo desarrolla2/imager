@@ -15,9 +15,7 @@ class ViewController extends Controller
      */
     public function indexAction(Request $request)
     {
-       $image = base64_decode($request->get('image'));
-       
-       die ($image);
+       $image = base64_decode($request->get('image'));       
 
         $response = $this->render('FrontendBundle:View:index.html.twig', array(
             'image' => $image

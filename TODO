@@ -1,6 +1,9 @@
 3.- Vista de imagen.
     1.- Gestión de Assets.
+        yui
     1.- Cache de imagenes.
+    2.- Pasar el provider y el id
+    3.- Shadowbox ???
 3.- Mejora de la búsqueda.
     1.- paginador
 3.- Pie de página
@@ -13,7 +16,7 @@
 5.- Backend.
     1.- Sonata
     1.- User Voice
-4.- Comunicacion.
+6.- Votos y reviews! ( facebook ).ma4
+.- Comunicacion.
 7.- Publicar en GitHub.
     1.- Comentarios de todas las clases.
-
