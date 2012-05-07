@@ -1,12 +1,10 @@
 3.- Vista de imagen.
-    1.- Gestión de Assets.
-        yui
-    1.- Cache de imagenes.
-    2.- Pasar el provider y el id
-    3.- Shadowbox ???
+    Image View http://highslide.com/
 3.- Mejora de la búsqueda.
-    1.- paginador
-3.- Pie de página
+    1.- titulos y descripciones de páginas.
+    1.- Paginador / jquery paginator / 
+    2.- Formulario de arriba a la derecha.
+3.- Pie de página.
 3.- Error 400 / 500
 3.- Warning control in jquery
 4.- Deploy.

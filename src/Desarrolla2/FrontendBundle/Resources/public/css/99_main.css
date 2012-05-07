@@ -12,3 +12,11 @@ body { padding-top: 110px; padding-bottom: 40px; }
 #home-search form {display:block; margin: 50px}
 #home-search form input {height: 32px;}
 #home-search h1{color: #0088CC}
+#search-result div p{text-align: center;}
+#search-result img.bordered {
+	padding: 5px;
+	border: solid 1px #CCC;
+	-moz-box-shadow: 1px 1px 5px #999;
+	-webkit-box-shadow: 1px 1px 5px #999;
+        box-shadow: 1px 1px 5px #999;
+}

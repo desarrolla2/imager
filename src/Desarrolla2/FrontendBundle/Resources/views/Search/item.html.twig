@@ -1,0 +1,7 @@
+<p>
+    <a href="{{ image.url }}" class="fancy" title="pending ... ">
+        <img data-original="{{ image.url }}"  alt="{{ image.name }}" 
+             src="{{ asset('bundles/frontend/images/loading.gif') }}" class="bordered" rel="shadowbox" />
+    </a>
+</p>
+<p>{{ loop.index }}.- {{ image.name }},  Rating {{ image.rating }} Licence: CC author:daniel.gonzalez provider {{ image.provider }}</p>
