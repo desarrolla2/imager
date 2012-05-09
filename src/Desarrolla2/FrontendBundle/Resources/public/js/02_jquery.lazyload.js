@@ -27,7 +27,8 @@
             data_attribute  : "original",
             skip_invisible  : true,
             appear          : null,
-            load            : null
+            load            : null,
+             callback        : null
         };
 
         function update() {
@@ -98,6 +99,9 @@
                                 .attr("src", $self.data(settings.data_attribute))
                                 [settings.effect](settings.effect_speed);
                             self.loaded = true;
+                               if (settings.callback) {
+                                settings.callback.call(self);
+                            }
 
                             /* Remove image from array so it is not looped next time. */
                             var temp = $.grep(elements, function(element) {

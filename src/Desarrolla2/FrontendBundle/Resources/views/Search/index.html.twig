@@ -1,4 +1,5 @@
 {% extends 'FrontendBundle::layout.html.twig' %}
+{% block title %} {{ query | upper }} | {{ parent() }}{% endblock %}
 {% block body %}
     <div id="search-result">     
     {% for image in images %}

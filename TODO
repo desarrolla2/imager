@@ -1,20 +1,38 @@
-3.- Vista de imagen.
-    Image View http://highslide.com/
 3.- Mejora de la búsqueda.
-    1.- titulos y descripciones de páginas.
-    1.- Paginador / jquery paginator / 
+    2.- Guardar las queries de búsqueda
     2.- Formulario de arriba a la derecha.
+
 3.- Pie de página.
+
 3.- Error 400 / 500
+
 3.- Warning control in jquery
+
+4.- favicon
+
+4.- Facebook Social Plugin
+
 4.- Deploy.
+
+4.- SiteMap.xml
+
+3.- Vista de imagen.   
+    Author.
+    Rating.
+    Title.
+    Image ID.
+    Tags.
+
 3.- Otros servicios de búsqueda de imagenes.
     1.- Google
     2.- Yahoo
+
 5.- Backend.
     1.- Sonata
     1.- User Voice
+
 6.- Votos y reviews! ( facebook ).ma4
 .- Comunicacion.
+
 7.- Publicar en GitHub.
     1.- Comentarios de todas las clases.
