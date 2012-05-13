@@ -7,7 +7,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Desarrolla2\FrontendBundle\Form\Type\SearchType;
-use Desarrolla2\FrontendBundle\Entity\Query;
 
 class SearchController extends Controller
 {
@@ -17,31 +16,30 @@ class SearchController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $em = $this->get('doctrine')->getEntityManager();
         $form = $this->createForm(new SearchType());
         $form->bindRequest($request);
-        $query = new Query();
         if ($form->isValid()) {
             $data = $form->getData();
-            $query->setName($data['q']);
-            $em->persist($query);
-            $em->flush();
+            $this->get('doctrine')->getEntityManager()
+                    ->getRepository('FrontendBundle:Query')
+                    ->addQuery($data['q']);
         }
 
         $client = $this->get('flickr_client');
-        $client->search($query);
+        $client->search($data['q']);
 
         $collection = $this->get('image_collection');
         $collection->sort();
 
         $response = $this->render('FrontendBundle:Search:index.html.twig', array(
-            'query'  => $query->getName(),
+            'query'  => $data['q'],
             'images' => $collection->toArray(),
+            'form' => $form->createView(),
                 ));
 
         $response->setCache(array(
             'public'   => true,
-            's_maxage' => $this->container->getParameter('cache_expires')
+            's_maxage' => $this->container->getParameter('cache_expires'),            
         ));
         return $response;
     }

@@ -18,8 +18,8 @@ namespace Desarrolla2\FrontendBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
- * @ORM\Table(name="queries")
+ * @ORM\Entity(repositoryClass="Desarrolla2\FrontendBundle\Repository\QueryRepository")
+ * @ORM\Table(name="queries",indexes={@ORM\index(name="search_idx_name", columns={"name"}),@ORM\index(name="search_idx_updated", columns={"updated"}),@ORM\index(name="search_idx_hits", columns={"hits"})})
  */
 class Query
 {
@@ -51,14 +51,16 @@ class Query
      */
     protected $updated;
 
-    public function __construct()
+    public function __construct($query = null)
     {
         $this->setCreated(new \DateTime());
         $this->setUpdated(new \DateTime());
-        $this->setHits(0);
+        $this->setName($query);
+        $this->setHits(1);
     }
-    
-    public function __toString(){
+
+    public function __toString()
+    {
         return $this->getName();
     }
 
@@ -79,7 +81,7 @@ class Query
      */
     public function setName($name)
     {
-        $this->name = trim(strtolower($name));
+        $this->name = trim(strtolower(substr($name, 0, 50)));
     }
 
     /**

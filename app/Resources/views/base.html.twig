@@ -2,13 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="description" content="Imager! Search images across internet">
+        <meta name="author" content="desarrolla2">
         <title>{% block title %}Imager! Search images across internet{% endblock %}</title>
         {% stylesheets 'css/bootstrap.css' 'css/bootstrap-responsive.css' '@FrontendBundle/Resources/public/css/*.css' filter='yui_css' %}
                 <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
         {% endstylesheets %}
-        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
-        <meta name="description" content="Imager! Search images across internet">
-        <meta name="author" content="desarrolla2">
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />        
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -28,17 +28,12 @@
                 </div>
             </div>
         </header>
-        <div class="container">
-            <div class="alert alert-block">
-                <a class="close" data-dismiss="alert" href="#">×</a>
-                <h4 class="alert-heading">Warning!</h4>This is a beta version.
-            </div>
+        <section id="main" class="container">            
             {% block body %}{% endblock %}            
-        </div>
-        <footer class="navbar" style="background: #2C2C2C">
-            <div class="container" style="width: 1170px; text-align: center;">                
-                <p >&copy; Imager 2012. developed by desarrolla2</p>
-            </div>
+        </section>
+        <footer class="navbar container" id="queries">
+            {% block footer %}{% endblock %}       
+                <p >&copy; Imager 2012. developed by <a href="http://desarrolla2.com">desarrolla2</a>.</p>
         </footer>
         {% javascripts  'js/jquery-1.7.2.min.js' 'js/bootstrap.js' '@FrontendBundle/Resources/public/js/*.js' filter='yui_js' %}
             <script src="{{ asset_url }}" type="text/javascript"></script>

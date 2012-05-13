@@ -1,38 +1,37 @@
-3.- Mejora de la búsqueda.
-    2.- Guardar las queries de búsqueda
-    2.- Formulario de arriba a la derecha.
-
-3.- Pie de página.
-
 3.- Error 400 / 500
-
-3.- Warning control in jquery
 
 4.- favicon
 
-4.- Facebook Social Plugin
+6.- Logo.
 
-4.- Deploy.
+8.- SiteMap.xml
 
-4.- SiteMap.xml
+9.- User Voice
 
-3.- Vista de imagen.   
+Repositorios radmas
+
+Listas
+
+10.- Vista de imagen.
     Author.
     Rating.
     Title.
     Image ID.
     Tags.
 
-3.- Otros servicios de búsqueda de imagenes.
+    Cache strategy
+        home 1 hora, resultados 3 dias, ficha 1 semana.
+
+    Titles y descriptions!
+
+11.- Votos y reviews! ( facebook ).ma4
+
+12.- Facebook Social Plugin
+
+7.- Deploy.
+
+13.- Comunicacion.
+
+14.- Otros servicios de búsqueda de imagenes.
     1.- Google
     2.- Yahoo
-
-5.- Backend.
-    1.- Sonata
-    1.- User Voice
-
-6.- Votos y reviews! ( facebook ).ma4
-.- Comunicacion.
-
-7.- Publicar en GitHub.
-    1.- Comentarios de todas las clases.

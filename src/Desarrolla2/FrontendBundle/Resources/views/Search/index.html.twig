@@ -1,7 +1,7 @@
-{% extends 'FrontendBundle::layout.html.twig' %}
+{% extends 'FrontendBundle::layout_search.html.twig' %}
 {% block title %} {{ query | upper }} | {{ parent() }}{% endblock %}
 {% block body %}
-    <div id="search-result">     
+    <section id="search-result">     
     {% for image in images %}
         {% if loop.index <= 68 %}
             {% if loop.index <= 8 %}
@@ -14,6 +14,9 @@
                 {% if (loop.index -8 )% 6 == 0%} </div> {% endif %}
             {% endif %}
         {% endif %}
+    {% else %}
+            <h1>Opps!!</h1>
+            <p>We cant found images about: <strong>{{ query | upper }}</strong>, you can try with other search terms!</p>
     {% endfor %}
-    </div>
+    </section>
 {% endblock %}

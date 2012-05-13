@@ -4,20 +4,20 @@
     Author     : Daniel González <daniel.gonzalez@freelancemadrid.es>
 */
 
-body { padding-top: 110px; padding-bottom: 40px; } 
+body { padding-top: 110px; padding-bottom: 40px; font-size: 15px;} 
 #brand{ float: left; margin-top: 10px;}
 #brand a, #brand p{ display: block; }
 #search{float: right; margin-top: 30px;}
-div#home-search{height: 600px; display: block; text-align: center;}
-div#home-search form {display:block; margin: 50px}
-div#home-search form input {height: 32px;}
-div#home-search h1{color: #0088CC}
-div#search-result div p{text-align: center;}
-div#search-result a{
+section#home-search{height: 200px; display: block; text-align: center;}
+section#home-search form {display:block; margin: 50px}
+section#home-search form input {height: 32px;}
+section#home-search h1{color: #0088CC}
+section#search-result div p{text-align: center;}
+section#search-result a{
     display: block;
     position: relative;
 }
-div#search-result a img.bordered {
+section#search-result a img.bordered {
 	padding: 5px;
 	border: solid 1px #CCC;
 	-moz-box-shadow: 1px 1px 5px #999;
@@ -33,3 +33,8 @@ div#search-result a img.flickr{
       right: 0;
       z-index: 100;
 }
+
+footer#queries{text-align: justify; margin-top: 30px; font-size: 16px;}
+footer#queries ul {margin: 30px;}
+footer#queries li{list-style: none; display: inline; margin: 3px; }
+footer#queries a {color: #333333;}

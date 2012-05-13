@@ -1,9 +1,0 @@
-
-Flickr
-    Imager
-
-    Key:
-    45dc17593786130089e3ca524724da6c
-
-    Secret:
-    5171e4bf2e67a054 

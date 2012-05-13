@@ -19,5 +19,16 @@ $(document).ready(function() {
     $("div#search-result a.fancybox").fancybox({
         'titlePosition'	:	'inside' 
     });
+    if (!$.cookie('alert')){
+        var $alert = $('<div class="alert alert-block">' +
+            '<a class="close" id="alert-close" data-dismiss="alert" href="#">×</a>' +
+            '<h4 class="alert-heading">Warning!</h4>This is a beta version.' +
+            '</div>');
+        $('section#main').prepend($alert);
+        $('a#alert-close').click(function(){
+            $alert.remove('slow');
+            $.cookie('alert', true, { expires: 1 })
+        })
+    }
 });
 //]]>

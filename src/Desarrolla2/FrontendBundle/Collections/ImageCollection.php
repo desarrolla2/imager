@@ -19,7 +19,7 @@ use Desarrolla2\FrontendBundle\Collections\Image;
 
 class ImageCollection
 {
-
+    
     private $elements = array();
 
     public function __construct()
