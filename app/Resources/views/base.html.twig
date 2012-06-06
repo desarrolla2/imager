@@ -4,12 +4,11 @@
         <meta charset="utf-8">
         <meta name="description" content="Imager! Search images across internet">
         <meta name="author" content="desarrolla2">
-        <title>{% block title %}Imager! Search images across internet{% endblock %}</title>
+        <title>{% block title %}Replicus! Search images across internet{% endblock %}</title>
         {% stylesheets 'css/bootstrap.css' 'css/bootstrap-responsive.css' '@FrontendBundle/Resources/public/css/*.css' filter='yui_css' %}
                 <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
         {% endstylesheets %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />        
-        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -21,7 +20,7 @@
                 <div class="container">
                     {% block header %}                               
                     <div  id="brand">
-                        <a class="" href="{{ path('home') }}"><h1>Imager!</h1></a>
+                        <a class="" href="{{ path('home') }}"><h1 class="logo">Replicus!</h1></a>
                         <p>"Search images across internet"</p>
                     </div>
                     {% endblock %}                     
@@ -33,9 +32,10 @@
         </section>
         <footer class="navbar container" id="queries">
             {% block footer %}{% endblock %}       
-                <p >&copy; Imager 2012. developed by <a href="http://desarrolla2.com">desarrolla2</a>.</p>
+                <p >&copy; Replicus 2012. developed by <a href="http://desarrolla2.com">desarrolla2</a>.</p>
         </footer>
-        {% javascripts  'js/jquery-1.7.2.min.js' 'js/bootstrap.js' '@FrontendBundle/Resources/public/js/*.js' filter='yui_js' %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+        {% javascripts  'js/bootstrap.js' '@FrontendBundle/Resources/public/js/*.js' filter='yui_js' %}
             <script src="{{ asset_url }}" type="text/javascript"></script>
         {% endjavascripts %}
     </body>

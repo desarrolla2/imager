@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for query in queries %}
+        <url>
+            <loc>{{ homepage }}/s?s/[q]={{ query | url_encode() }}</loc>
+            <changefreq>daily</changefreq>
+        </url>
+    {% endfor %}
+</urlset>

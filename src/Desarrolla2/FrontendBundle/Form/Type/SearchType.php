@@ -12,8 +12,9 @@ class SearchType extends AbstractType
 
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('q', new \Symfony\Component\Form\Extension\Core\Type\TextType(), array(
+        $builder->add('q', new \Symfony\Component\Form\Extension\Core\Type\SearchType(), array(
             'required' => true,
+            'trim'     => true,
             'attr'     => array(
                 'placeholder' => 'search ...',
                 'class'       => 'input-medium search-query span3',
@@ -30,7 +31,10 @@ class SearchType extends AbstractType
     {
 
         $collectionConstraint = new Collection(array(
-                    'q' => new MinLength(3),
+                    'q' => new MinLength(array(
+                        'limit'   => 3,
+                        'message' => 'This value is too short.',
+                    )),
                 ));
         return array(
             'validation_constraint' => $collectionConstraint,

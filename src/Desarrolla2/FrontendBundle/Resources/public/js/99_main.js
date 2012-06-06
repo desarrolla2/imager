@@ -1,11 +1,3 @@
-/* 
-    Document   : main
-    Created on : May 6, 2012, 4:08:24 PM
-    Author     : Daniel González <daniel.gonzalez@freelancemadrid.es>
-*/
-
-//<![CDATA[
-
 $(document).ready(function() {
     var $img = $('<img src="/bundles/frontend/images/flickr.png" class="flickr"/>');
     $('div#search-result img').lazyload({
@@ -27,8 +19,9 @@ $(document).ready(function() {
         $('section#main').prepend($alert);
         $('a#alert-close').click(function(){
             $alert.remove('slow');
-            $.cookie('alert', true, { expires: 1 })
-        })
+            $.cookie('alert', true, {
+                expires: 30
+            });
+        });
     }
 });
-//]]>

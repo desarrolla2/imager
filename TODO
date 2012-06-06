@@ -1,17 +1,3 @@
-3.- Error 400 / 500
-
-4.- favicon
-
-6.- Logo.
-
-8.- SiteMap.xml
-
-9.- User Voice
-
-Repositorios radmas
-
-Listas
-
 10.- Vista de imagen.
     Author.
     Rating.
@@ -19,14 +5,13 @@ Listas
     Image ID.
     Tags.
 
-    Cache strategy
-        home 1 hora, resultados 3 dias, ficha 1 semana.
-
     Titles y descriptions!
 
-11.- Votos y reviews! ( facebook ).ma4
+Listas
 
-12.- Facebook Social Plugin
+11.- Votos y reviews! Facebook Social Plugin
+
+13.- Piwik
 
 7.- Deploy.
 

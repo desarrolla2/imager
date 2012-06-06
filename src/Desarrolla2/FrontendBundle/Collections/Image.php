@@ -22,13 +22,14 @@ class Image
      * Image name
      * @var string      
      */
-    private $name = null;
-    private $rating = 0;
-    private $url = null;
-    private $provider = null;
-    private $owner = null;
-    private $description = null;
-    private $license = null;
+    protected $id = null;
+    protected $name = null;
+    protected $rating = 0;
+    protected $url = null;
+    protected $provider = null;
+    protected $owner = null;
+    protected $description = null;
+    protected $license = null;
 
     /**
      * Settings parametters by construct options
@@ -36,12 +37,25 @@ class Image
      */
     public function __construct($options = array())
     {
+        if (isset($options['id'])) {
+            $this->setId($options['id']);
+        }
         if (isset($options['name'])) {
             $this->setName($options['name']);
         }
         if (isset($options['title'])) {
             $this->setName($options['title']);
         }
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
@@ -89,11 +103,6 @@ class Image
         }
     }
 
-    public function getBase64Url()
-    {
-        return base64_encode($this->url);
-    }
-
     public function getProvider()
     {
         return $this->provider;
@@ -103,6 +112,20 @@ class Image
     {
         if ($provider) {
             $this->provider = (string) $provider;
+        }
+    }
+
+    public function setOwner($owner = null)
+    {
+        if ($owner) {
+            $this->owner = (string) $owner;
+        }
+    }
+
+    public function setDescription($description = null)
+    {
+        if ($description) {
+            $this->description = (string) $description;
         }
     }
 

@@ -1,5 +1,3 @@
-/* http://james.padolsey.com/javascript/special-scroll-events-for-jquery/ */
-
 (function(){
     
     var special = jQuery.event.special,

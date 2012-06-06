@@ -2,7 +2,7 @@
 <nav>
     <ul id="queries">
     {% for query in queries %}
-            <li><a href="/s?s[q]={{ query }}" title="{{ query }} images" >{{ query }}</a></li>
+            <li><a href="{{ homepage }}/s?s/[q]={{ query | url_encode() }}" title="{{ query }} images" >{{ query }}</a></li>
     {% endfor %}
     </ul>
 </nav>

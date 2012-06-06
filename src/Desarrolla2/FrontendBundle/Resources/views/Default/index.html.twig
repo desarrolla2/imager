@@ -2,10 +2,15 @@
 {% block body %}
 <div id="home-search">
     <header>
-        <a class="" href="{{ path('home') }}"><h1>Imager!</h1></a>
+        <a class="" href="{{ path('home') }}"><h1 class="logo">Imager!</h1></a>
         <h3>"Search images across internet"</h3>
-    </header>
+    </header>    
     <form class="form-search" action="{{ path('search') }}" method="get" >   
+        {% if app.session.hasFlash('error') %} 
+            <div class="alert alert-error">
+                {{ app.session.flash('error') }} 
+            </div>
+        {% endif %}        
         <input type="text" id="s_q" name="s[q]" required="required"    placeholder="search ..." class="search-query span4" />
         <button type="submit" class="btn btn-primary btn-large">Search</button>
     </form>
