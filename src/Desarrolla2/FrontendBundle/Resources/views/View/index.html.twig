@@ -1,12 +1,50 @@
 {% extends 'FrontendBundle::layout_search.html.twig' %}
 {% block title %} {{ image.name | upper }} | {{ parent() }}{% endblock %}
+{% block description %} {{  image.description }}{% endblock %}
 {% block body %}
-    <div id="image-result">     
+    <div id="search-result">
         {% if image %}
-            {% include "FrontendBundle:View:item.html.twig" %}
-        {% else %}
-            <h1>Opps!!</h1>
-            <p>We cant found image, you can try with other search terms!</p>
-        {% endif %}
+            <header>
+                <h1>{{ image.name }}</h1>
+            </header>
+            <div class="row">            
+                <div class="span6">
+                    <article>
+                        <p>
+                            <a href="" class="flickr center" title="{{ image.name }}">
+                                <img data-original="{{ image.url }}"  alt="{{ image.name }}" class="bordered" width="560"
+                                    src="{{ image.url }}"  rel="shadowbox" />        
+                            </a>
+                        </p> 
+                    </article>
+                </div>
+                <div class="span6">
+                    <article>
+                        <ul class="links">
+                            <li>Author: {{ image.owner }}</li>
+                            <li>Name: {{ image.name }}</li>
+                            <li>Description: {{ image.description }}</li>
+                            <li><a href="{{ image.url }}" title="{{ image.name }}" class="fancybox">Preview </a></li>
+                            <li><a href="" title="{{ image.name }}" class="not-available">Descargar</a></li>
+                        </ul>
+                        <p>What do you think? leave us a comment</p>    
+                        <div class="fb-comments" data-href="{{ path('view', {'provider' : 'f', 'hash' : image.id, 'description' : 'not-implemented' }) }}" 
+                         data-num-posts="10" data-width="540"></div>
+                    </article>                                           
+                </div>                  
+            {% else %}
+                {% include "FrontendBundle:View:404.html.twig" %}
+            {% endif %}
+        </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=349275438482912";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 {% endblock %}

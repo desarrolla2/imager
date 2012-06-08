@@ -6,7 +6,7 @@ use Doctrine\ORM\EntityRepository;
 use Desarrolla2\FrontendBundle\Entity\Query;
 
 /*
- * This file is part of the Imager package.
+ * This file is part of the Replicus package.
  * 
  * Short description   
  *
@@ -40,7 +40,6 @@ class QueryRepository extends EntityRepository
                 $query->setUpdated(new \DateTime());
                 $query->setHits($query->getHits() + 1);
             }
-
             $em->persist($query);
             $em->flush();
         }
@@ -52,14 +51,14 @@ class QueryRepository extends EntityRepository
                 'SELECT q FROM FrontendBundle:Query q' .
                 ' ORDER BY q.updated DESC'
         );
-        return $query->setFirstResult(1)->setMaxResults($this->max_results)->getResult();
+        return $query->setFirstResult(5)->setMaxResults($this->max_results)->getResult();
     }
 
     public function getMostHits()
     {
         $query = $this->getEntityManager()->createQuery(
                 'SELECT q FROM FrontendBundle:Query q' .
-                ' ORDER BY q.hits DESC'
+                ' ORDER BY q.hits DESC, q.updated DESC'
         );
         return $query->setMaxResults($this->max_results)->getResult();
     }

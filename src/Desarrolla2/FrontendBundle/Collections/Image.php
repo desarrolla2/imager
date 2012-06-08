@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Imager package.
+ * This file is part of the Replicus package.
  * 
  * Image represent a image object
  *
@@ -121,12 +121,20 @@ class Image
             $this->owner = (string) $owner;
         }
     }
+    
+    public function getOwner(){
+        return $this->owner;
+    }
 
     public function setDescription($description = null)
     {
         if ($description) {
             $this->description = (string) $description;
         }
+    }
+            
+    public function getDescription(){
+        return $this->description;
     }
 
 }

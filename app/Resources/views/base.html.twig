@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="Imager! Search images across internet">
+        <meta name="description" content="{% block description %}Replicus! Search images across internet{% endblock %}">
         <meta name="author" content="desarrolla2">
         <title>{% block title %}Replicus! Search images across internet{% endblock %}</title>
         {% stylesheets 'css/bootstrap.css' 'css/bootstrap-responsive.css' '@FrontendBundle/Resources/public/css/*.css' filter='yui_css' %}
@@ -15,6 +15,7 @@
         <link rel="shortcut icon" href="/ico/favicon.ico" />
     </head>
     <body>
+        <div id="fb-root"></div>
         <header class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
@@ -38,6 +39,7 @@
         {% javascripts  'js/bootstrap.js' '@FrontendBundle/Resources/public/js/*.js' filter='yui_js' %}
             <script src="{{ asset_url }}" type="text/javascript"></script>
         {% endjavascripts %}
+        {% block javascripts %}
             <!-- Piwik -->
             <script type="text/javascript">
             var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.desarrolla2.com/" : "http://piwik.desarrolla2.com/");
@@ -50,5 +52,6 @@
             } catch( err ) {}
                     </script><noscript><p><img src="http://piwik.desarrolla2.com/piwik.php?idsite=5" style="border:0" alt="" /></p></noscript>
                     <!-- End Piwik Tracking Code -->
+        {% endblock %}    
     </body>
 </html>

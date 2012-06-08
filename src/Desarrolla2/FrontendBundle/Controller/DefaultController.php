@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Imager package.
+ * This file is part of the Replicus package.
  * 
  * Short description   
  *
@@ -23,7 +23,7 @@ class DefaultController extends Controller
 {
 
     /**
-     * @Route("/", name="home")
+     * @Route("/home", name="home")
      */
     public function indexAction(Request $request)
     {

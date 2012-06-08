@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Imager package.
+ * This file is part of the Replicus package.
  * 
  * Short description   
  *

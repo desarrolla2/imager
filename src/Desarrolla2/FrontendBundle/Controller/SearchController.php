@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Imager package.
+ * This file is part of the Replicus package.
  * 
  * Short description   
  *
@@ -25,10 +25,14 @@ class SearchController extends Controller
 {
 
     /**
-     * @Route("/s", name="search")
+     * @Route("/", name="search")
      */
     public function indexAction(Request $request)
     {
+        if (is_null($request->get('s'))) {
+            $httpKernel = $this->container->get('http_kernel');
+            return $httpKernel->forward('FrontendBundle:Default:index');
+        }
         $form = $this->createForm(new SearchType());
         $form->bindRequest($request);
         if ($form->isValid()) {
@@ -41,11 +45,12 @@ class SearchController extends Controller
             $client = $this->get('flickr.search');
             $collection = $client->search($data['q']);
             $collection->sort();
-
+           
             $response = $this->render('FrontendBundle:Search:index.html.twig', array(
                 'query'  => $data['q'],
                 'images' => $collection->toArray(),
                 'form'   => $form->createView(),
+                'description' => $collection->getDescription(),
                     ));
 
             $response->setCache(array(
@@ -55,7 +60,7 @@ class SearchController extends Controller
             return $response;
         } else {
             $errors = $form->get('q')->getErrors();
-            $this->get('session')->setFlash('error',$errors[0]->getMessageTemplate());
+            $this->get('session')->setFlash('error', $errors[0]->getMessageTemplate());
             return new RedirectResponse($this->generateUrl('home'));
         }
     }
