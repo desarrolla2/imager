@@ -5,7 +5,6 @@ $(document).ready(function() {
         event: 'scrollstop',
         callback: function (){
             $(this).addClass('bordered').after($img.clone());
-            console.log($img);
         }
     });
     $("div#search-result a.fancybox").fancybox({
