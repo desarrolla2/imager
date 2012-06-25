@@ -1,6 +1,7 @@
 @font-face { font-family: 'Henny Penny'; font-style: normal; font-weight: 400;  src: local('Henny Penny'), local('HennyPenny-Regular'), url('/font/hennypenny.woff') format('woff'); }
 body { padding-top: 110px; padding-bottom: 40px; font-size: 15px;} 
 h1.logo{font-family: 'Henny Penny', cursive; text-decoration: none; color: #0088CC;}
+header a:hover{text-decoration: none;}
 #brand{ float: left; margin-top: 10px;}
 #brand a, #brand p{ display: block; }
 #search{float: right; margin-top: 30px;}

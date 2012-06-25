@@ -28,7 +28,7 @@
                             <li><a href="" title="{{ image.name }}" class="not-available">Descargar</a></li>
                         </ul>
                         <p>What do you think? leave us a comment</p>    
-                        <div class="fb-comments" data-href="{{ path('view', {'provider' : 'f', 'hash' : image.id, 'description' : 'not-implemented' }) }}" 
+                        <div class="fb-comments" data-href="{{ path('view', {'provider' : 'f', 'hash' : image.id, 'description' : image.slug }) }}" 
                          data-num-posts="10" data-width="540"></div>
                     </article>                                           
                 </div>                  

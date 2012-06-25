@@ -15,6 +15,8 @@
 
 namespace Desarrolla2\FrontendBundle\Collections;
 
+use Desarrolla2\FrontendBundle\Utils\Utils;
+
 class Image
 {
 
@@ -121,8 +123,9 @@ class Image
             $this->owner = (string) $owner;
         }
     }
-    
-    public function getOwner(){
+
+    public function getOwner()
+    {
         return $this->owner;
     }
 
@@ -132,9 +135,15 @@ class Image
             $this->description = (string) $description;
         }
     }
-            
-    public function getDescription(){
+
+    public function getDescription()
+    {
         return $this->description;
+    }
+
+    public function slug()
+    {
+        return Utils::slugify($this->getName());
     }
 
 }
