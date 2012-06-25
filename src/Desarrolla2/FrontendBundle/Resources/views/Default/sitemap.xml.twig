@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for query in queries %}
+    {% for item in most_hits %}
         <url>
-            <loc>{{ homepage }}/s?s/[q]={{ query | url_encode() }}</loc>
+            <loc>{{ homepage }}/s?s/[q]={{ item | url_encode() }}</loc>
             <changefreq>daily</changefreq>
         </url>
     {% endfor %}
+        {% for item in latest %}
+        <url>
+            <loc>{{ homepage }}/s?s/[q]={{ item | url_encode() }}</loc>
+            <changefreq>daily</changefreq>
+        </url>
+    {% endfor %}    
 </urlset>

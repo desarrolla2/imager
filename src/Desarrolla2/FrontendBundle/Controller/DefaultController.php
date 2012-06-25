@@ -44,21 +44,24 @@ class DefaultController extends Controller
      * @Route("/sitemap.xml", name="sitemap")
      */
     public function sitemapAction(Request $request)
-    {       
+    {
         $response = $this->render('FrontendBundle:Default:sitemap.xml.twig', array(
-            'queries' => $this->get('doctrine')
+            'most_hits' => $this->get('doctrine')
                     ->getEntityManager()->getRepository('FrontendBundle:Query')
-                    ->getMostHits(),
-            'homepage' => 'http://' . $request->getHttpHost(),
+                    ->getMostHits(100),
+            'latest'    => $this->get('doctrine')
+                    ->getEntityManager()->getRepository('FrontendBundle:Query')
+                    ->getLatest(100),
+            'homepage'  => 'http://' . $request->getHttpHost(),
                 ));
-        
-         $response->headers->set('Content-Type', 'text/xml; charset=utf-8');
+
+        $response->headers->set('Content-Type', 'text/xml; charset=utf-8');
 
         $response->setCache(array(
             'public'   => true,
             's_maxage' => $this->container->getParameter('cache_expires_home')
         ));
-        
+
         return $response;
     }
 
