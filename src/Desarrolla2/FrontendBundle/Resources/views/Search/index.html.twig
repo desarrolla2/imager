@@ -1,6 +1,6 @@
 {% extends 'FrontendBundle::layout_search.html.twig' %}
-{% block title %} {{ query | upper }} | {{ parent() }}{% endblock %}
-{% block description %}{{ description}}{% endblock %}
+{% block title %} {{ query | upper }} {{ parent() }}{% endblock %}
+{% block description %}{{ description | lower | truncate(70) }} {{ parent() }}{% endblock %}
 {% block body %}
     <div id="search-result">     
     {% for image in images %}

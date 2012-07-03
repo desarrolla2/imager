@@ -2,9 +2,9 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="{% block description %}Replicus! Search images across internet{% endblock %}">
+        <meta name="description" content="{% block description %} | Search images across internet{% endblock %}">
         <meta name="author" content="desarrolla2">
-        <title>{% block title %}Replicus! Search images across internet{% endblock %}</title>        
+        <title>{% block title %}| Replicus!{% endblock %}</title>        
         {% stylesheets 'css/bootstrap.css' 'css/bootstrap-responsive.css' '@FrontendBundle/Resources/public/css/*.css'  filter='yui_css' %}
                 <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
         {% endstylesheets %}
@@ -42,15 +42,17 @@
             {% block javascripts %}
 <!-- Piwik -->
 <script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.desarrolla2.com/" : "http://piwik.desarrolla2.com/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
-</script><noscript><p><img src="http://piwik.desarrolla2.com/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.desarrolla2.com/" : "http://piwik.desarrolla2.com/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+    var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
+    piwikTracker.trackPageView();
+    piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+</script>
+<noscript><p><img src="http://piwik.desarrolla2.com/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
 <!-- End Piwik Tracking Code -->
 {% endblock %}
     </body>
