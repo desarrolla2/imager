@@ -6,7 +6,7 @@ set :php_bin,               '/usr/bin/php'
 set :keep_releases,         15
 set :use_composer,          true
 
-set :permission_method,     ':chmod'
+set :permission_method,     :chown
 set :user,                  'www-data'
 set :webserver_user,        'www-data'
 set :group_writable,        true
@@ -23,7 +23,7 @@ set :shared_files,          ['app/config/parameters.yml']
 set :shared_children,       [ app_path + '/logs']
 
 set :model_manager,         'doctrine'
-set :use_sudo,              false
+set :use_sudo,              true
 
 ssh_options[:forward_agent] = true
 

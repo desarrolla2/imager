@@ -3,9 +3,3 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ app.php [QSA,L]
 </IfModule>
-<FilesMatch "\.(gif|jpg|jpeg|png|ico|woff)$">
-        Header set Cache-Control "max-age=2592000"
-</FilesMatch>
-<FilesMatch "\.(css|js)$">
-        Header set Cache-Control "max-age=604800"
-</FilesMatch>
