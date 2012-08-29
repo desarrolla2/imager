@@ -19,7 +19,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="Desarrolla2\FrontendBundle\Repository\QueryRepository")
- * @ORM\Table(name="queries",indexes={@ORM\index(name="search_idx_name", columns={"name"}),@ORM\index(name="search_idx_updated", columns={"updated"}),@ORM\index(name="search_idx_hits", columns={"hits"})})
+ * @ORM\Table(name="queries",indexes={@ORM\Index(name="search_idx_name", columns={"name"}),@ORM\Index(name="search_idx_updated", columns={"updated"}),@ORM\Index(name="search_idx_hits", columns={"hits"})})
  */
 class Query
 {
