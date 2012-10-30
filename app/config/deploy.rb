@@ -13,12 +13,13 @@ role :web,                              domain
 role :app,                              domain
 role :db, domain,                       :primary => true
 
-set :keep_releases,                     5
+set :keep_releases,                     3
 set :use_composer,                      true
 set :dump_assetic_assets,               true
 set :model_manager,                     'doctrine'
 set :deploy_via,                        :remote_cache
 set :vendors_mode,                      'reinstall'
+set :clear_controllers,                 true
 
 set :php_bin,                           '/usr/bin/php'
 set :composer_bin,                      '/usr/local/bin/composer'
@@ -48,7 +49,7 @@ end
 # Git
 #-----------------------------------------------------------
 
-set :repository,                        'git@github.com:desarrolla2/desarrolla2.git'
+set :repository,                        'git@github.com:desarrolla2/imager.git'
 set :scm,                               :git
 
 #-----------------------------------------------------------
