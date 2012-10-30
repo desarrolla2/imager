@@ -17,7 +17,13 @@
         "sensio/framework-extra-bundle": "2.1.*",
         "sensio/generator-bundle": "2.1.*",
         "jms/security-extra-bundle": "1.2.*",
-        "jms/di-extra-bundle": "1.1.*"
+        "jms/di-extra-bundle": "1.1.*",
+        
+                "desarrolla2/cache": "*",
+        "desarrolla2/rss-client": "*",
+        "desarrolla2/twitter-client": "*",
+        "desarrolla2/db": "*",
+        "desarrolla2/gmap": "*"
     },
     "scripts": {
         "post-install-cmd": [
