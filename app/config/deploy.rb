@@ -1,46 +1,87 @@
-set :application,           'Replicus'
-set :domain,                'root@server2.desarrolla2.com'
-set :deploy_to,             '/var/www/replic.us'
+#-----------------------------------------------------------
+# General
+#-----------------------------------------------------------
 
-set :php_bin,               '/usr/bin/php'
-set :keep_releases,         15
-set :use_composer,          true
+set :application,           'Replicus.Search images across internet'
 
-set :permission_method,     :chown
-set :user,                  'www-data'
-set :webserver_user,        'www-data'
-set :group_writable,        true
+set :domain,      'root@server2.desarrolla2.com'
+set :user,        'root'
+set :deploy_to,   '/var/www/replic.us'
+set :branch,      'master'
 
-set :repository,            'git@github.com:desarrolla2/imager.git'
-set :scm,                   :git
-set :scm_command, "/usr/bin/git"
-set :deploy_via,            :remote_cache
+role :web,                              domain
+role :app,                              domain
+role :db, domain,                       :primary => true
 
-set :dump_assetic_assets,   true
+set :keep_releases,                     5
+set :use_composer,                      true
+set :dump_assetic_assets,               true
+set :model_manager,                     'doctrine'
+set :deploy_via,                        :remote_cache
+set :vendors_mode,                      'reinstall'
 
-set :writable_dirs,         ['app/cache', 'app/logs']
-set :shared_files,          ['app/config/parameters.yml']
-set :shared_children,       [ app_path + '/logs']
+set :php_bin,                           '/usr/bin/php'
+set :composer_bin,                      '/usr/local/bin/composer'
 
-set :model_manager,         'doctrine'
-set :use_sudo,              true
+#-----------------------------------------------------------
+# Users and permission
+#-----------------------------------------------------------
 
-ssh_options[:forward_agent] = true
+set :webserver_user,                    'www-data'
+set :group_writable,                    true
+set :permission_method,                 :chown
+set :use_sudo,                          false
+set :writable_dirs,                     ['app/cache', 'app/logs']
+set :shared_files,                      ['app/config/parameters.yml','app/config/security.yml']
+set :shared_children,                   [ app_path + '/logs', web_path + '/up']
 
-role :web,                  domain
-role :app,                  domain
-role :db,                   domain, :primary => true
+ssh_options[:forward_agent] =           true
+
+
+after "deploy:finalize_update" do
+  run "sudo chown -R www-data:www-data #{latest_release}/#{cache_path}"
+  run "sudo chown -R www-data:www-data #{latest_release}/#{log_path}"
+  run "sudo chmod -R 777 #{latest_release}/#{cache_path}"
+end
+
+#-----------------------------------------------------------
+# Git
+#-----------------------------------------------------------
+
+set :repository,                        'git@github.com:desarrolla2/desarrolla2.git'
+set :scm,                               :git
+
+#-----------------------------------------------------------
+# Copy vendors
+#-----------------------------------------------------------
 
 before 'symfony:composer:install', 'composer:copy_vendors'
 before 'symfony:composer:update', 'composer:copy_vendors'
 
 namespace :composer do
   task :copy_vendors, :except => { :no_release => true } do
-    pretty_print "--> Copy vendor file from previous release"
-
+    puts "--> Copy vendor directory from previous release"
     run "vendorDir=#{current_path}/vendor; if [ -d $vendorDir ] || [ -h $vendorDir ]; then cp -a $vendorDir #{latest_release}/vendor; fi;"
-    puts_ok
+    puts "finish"
   end
+end 
+
+#-----------------------------------------------------------
+# Clean
+#-----------------------------------------------------------
+after "deploy:update", "deploy:cleanup"
+
+after 'deploy:restart' do
+  run 'varnishadm -S /etc/varnish/secret -T localhost:6082 "ban req.http.host == replic.us"'
 end
 
-logger.level = Logger::IMPORTANT
+#-----------------------------------------------------------
+# Output
+#-----------------------------------------------------------
+
+# IMPORTANT = 0
+# INFO      = 1
+# DEBUG     = 2
+# TRACE     = 3
+# MAX_LEVEL = 3
+logger.level = Logger::MAX_LEVEL
