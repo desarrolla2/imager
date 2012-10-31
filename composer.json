@@ -1,6 +1,6 @@
 {
-    "name": "symfony/framework-standard-edition",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "name": "desarrolla2/imager",
+    "description": "Replicus | Search images across internet",
     "autoload": {
         "psr-0": { "": "src/" }
     },
@@ -19,7 +19,6 @@
         "jms/security-extra-bundle": "1.2.*",
         "jms/di-extra-bundle": "1.1.*",
         
-                "desarrolla2/cache": "*",
         "desarrolla2/rss-client": "*",
         "desarrolla2/twitter-client": "*",
         "desarrolla2/db": "*",

@@ -4,7 +4,7 @@
 
 set :application,           'Replicus.Search images across internet'
 
-set :domain,      'root@server2.desarrolla2.com'
+set :domain,      'root@replic.us'
 set :user,        'root'
 set :deploy_to,   '/var/www/replic.us'
 set :branch,      'master'
@@ -13,7 +13,7 @@ role :web,                              domain
 role :app,                              domain
 role :db, domain,                       :primary => true
 
-set :keep_releases,                     3
+set :keep_releases,                     2
 set :use_composer,                      true
 set :dump_assetic_assets,               true
 set :model_manager,                     'doctrine'
