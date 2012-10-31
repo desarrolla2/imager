@@ -17,8 +17,6 @@ set :keep_releases,                     2
 set :use_composer,                      true
 set :dump_assetic_assets,               true
 set :model_manager,                     'doctrine'
-set :deploy_via,                        :remote_cache
-set :vendors_mode,                      'reinstall'
 set :clear_controllers,                 true
 
 set :php_bin,                           '/usr/bin/php'
@@ -28,10 +26,7 @@ set :composer_bin,                      '/usr/local/bin/composer'
 # Users and permission
 #-----------------------------------------------------------
 
-set :webserver_user,                    'www-data'
-set :group_writable,                    true
-set :permission_method,                 :chown
-set :use_sudo,                          false
+set :use_sudo,                          true
 set :writable_dirs,                     ['app/cache', 'app/logs']
 set :shared_files,                      ['app/config/parameters.yml','app/config/security.yml']
 set :shared_children,                   [ app_path + '/logs', web_path + '/up']

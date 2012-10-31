@@ -1,217 +1,6 @@
 {
-    "hash": "09081673299b149630a13dfdfd945e71",
+    "hash": "971a91f442be2c8332fa82769471361c",
     "packages": [
-        {
-            "name": "desarrolla2/cache",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/desarrolla2/Cache.git",
-                "reference": "v1.0.0-rc.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/desarrolla2/Cache/zipball/v1.0.0-rc.1",
-                "reference": "v1.0.0-rc.1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "time": "1351031061",
-            "type": "library",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Desarrolla2\\Cache\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Daniel González",
-                    "homepage": "http://desarrolla2.com/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Provides an cache interface for several adapters (Apc, File, Mencached, Mysql, ... )",
-            "homepage": "https://github.com/desarrolla2/Cache",
-            "keywords": [
-                "cache",
-                "apc",
-                "memcached",
-                "file cache",
-                "mysql cache"
-            ]
-        },
-        {
-            "name": "desarrolla2/db",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/desarrolla2/DB.git",
-                "reference": "08706c88a53d028d5140f6e40abcaaf153cd18ee"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/desarrolla2/DB/zipball/08706c88a53d028d5140f6e40abcaaf153cd18ee",
-                "reference": "08706c88a53d028d5140f6e40abcaaf153cd18ee",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "time": "1349102835",
-            "type": "library",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Desarrolla2\\DB\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Daniel González",
-                    "homepage": "http://desarrolla2.com/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Provides an adapter interface to database access",
-            "keywords": [
-                "database",
-                "mysql"
-            ]
-        },
-        {
-            "name": "desarrolla2/gmap",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/desarrolla2/Gmap.git",
-                "reference": "1cd41794152dfd4e7dc3fe9a1b067be2ea378c76"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/desarrolla2/Gmap/zipball/1cd41794152dfd4e7dc3fe9a1b067be2ea378c76",
-                "reference": "1cd41794152dfd4e7dc3fe9a1b067be2ea378c76",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "time": "1347550390",
-            "type": "library",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Desarrolla2\\Gmap\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Daniel González",
-                    "homepage": "http://desarrolla2.com/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Provides an google map adapter",
-            "keywords": [
-                "map",
-                "google"
-            ]
-        },
-        {
-            "name": "desarrolla2/rss-client",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/desarrolla2/RSSClient.git",
-                "reference": "4901d3f2ddd97c0667a50967b3d290846fb74b0d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/desarrolla2/RSSClient/zipball/4901d3f2ddd97c0667a50967b3d290846fb74b0d",
-                "reference": "4901d3f2ddd97c0667a50967b3d290846fb74b0d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "ezyang/htmlpurifier": "dev-master",
-                "desarrolla2/cache": "dev-master"
-            },
-            "time": "1349448074",
-            "type": "library",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Desarrolla2\\RSSClient\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Daniel González",
-                    "homepage": "http://desarrolla2.com/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A independent RSS client manager library.",
-            "keywords": [
-                "rss"
-            ]
-        },
-        {
-            "name": "desarrolla2/twitter-client",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/desarrolla2/TwitterClient.git",
-                "reference": "3ca035d9cd32f057bd4fe7def77274462bebf15b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/desarrolla2/TwitterClient/zipball/3ca035d9cd32f057bd4fe7def77274462bebf15b",
-                "reference": "3ca035d9cd32f057bd4fe7def77274462bebf15b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "desarrolla2/rss-client": "dev-master"
-            },
-            "time": "1349821754",
-            "type": "library",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Desarrolla2\\TwitterClient\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Daniel González",
-                    "homepage": "http://desarrolla2.com/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A independent Twitter client library to retrieve Twits.",
-            "keywords": [
-                "client",
-                "twitter"
-            ]
-        },
         {
             "name": "doctrine/common",
             "version": "2.3.x-dev",
@@ -483,47 +272,6 @@
             ]
         },
         {
-            "name": "ezyang/htmlpurifier",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/ezyang/htmlpurifier.git",
-                "reference": "8a8b123d3322d24d77114dfa767a5eafbe9ff24b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/ezyang/htmlpurifier/zipball/8a8b123d3322d24d77114dfa767a5eafbe9ff24b",
-                "reference": "8a8b123d3322d24d77114dfa767a5eafbe9ff24b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2"
-            },
-            "time": "1347811906",
-            "type": "library",
-            "installation-source": "source",
-            "autoload": {
-                "classmap": [
-                    "library/"
-                ]
-            },
-            "license": [
-                "LGPL"
-            ],
-            "authors": [
-                {
-                    "name": "Edward Z. Yang",
-                    "email": "admin@htmlpurifier.org",
-                    "homepage": "http://ezyang.com"
-                }
-            ],
-            "description": "Standards compliant HTML filter written in PHP",
-            "homepage": "http://htmlpurifier.org/",
-            "keywords": [
-                "html"
-            ]
-        },
-        {
             "name": "jms/aop-bundle",
             "version": "1.0.0",
             "target-dir": "JMS/AopBundle",
@@ -542,7 +290,7 @@
                 "symfony/framework-bundle": "2.*",
                 "jms/cg": "1.0.0"
             },
-            "time": "2012-01-02 11:50:26",
+            "time": "2012-01-02 12:50:26",
             "type": "symfony-bundle",
             "installation-source": "dist",
             "autoload": {
@@ -584,7 +332,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-02 11:40:52",
+            "time": "2012-01-02 12:40:52",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -686,7 +434,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-02 12:32:49",
+            "time": "2012-01-02 13:32:49",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -701,7 +449,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1065,7 +813,7 @@
                     "dev-master": "4.2-dev"
                 }
             },
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "files": [
                     "lib/swift_required.php"
